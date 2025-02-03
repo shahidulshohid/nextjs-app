@@ -17,8 +17,8 @@ const About = () => {
     return (
         <div>
             <p className="font-bold text-3xl">About page</p>
-            <Link href='/about/address'>Address page</Link>
-            <button type="button" onClick={handleNavigation}></button>
+            <p><Link href='/about/address'>Address page</Link></p>
+            <button type="button" onClick={handleNavigation}>Address page</button>
         </div>
     );
 };
