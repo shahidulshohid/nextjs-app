@@ -39,16 +39,22 @@ const ServicesDetails = ({ params }) => {
     },
   ];
   const singleData = data.find((d) => d.id === Number(id));
-  return (
-    <div>
-      <p className="font-bold text-3xl text-center mb-5">details page</p>
-      <div className="space-y-1 bg-gray-200 p-3 rounded-xl">
-        <p className="text-lg font-semibold">Id: {id}</p>
-        <p className="text-lg font-semibold">Description: {singleData.description}</p>
-        <img src={singleData.imageId} alt="" />
+  if (singleData) {
+    return (
+      <div>
+        <p className="font-bold text-3xl text-center mb-5">details page</p>
+        <div className="space-y-1 bg-gray-200 p-3 rounded-xl">
+          <p className="text-lg font-semibold">Id: {id}</p>
+          <p className="text-lg font-semibold">
+            Description: {singleData.description}
+          </p>
+          <img src={singleData.imageId} alt="" />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }else {
+    return <p>Not Found</p>
+  }
 };
 
 export default ServicesDetails;
